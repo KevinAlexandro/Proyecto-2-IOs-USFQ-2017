@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GraficadorProyecto2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,155 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color relleno:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HL6-Cx-o7O">
+                                <rect key="frame" x="0.0" y="203" width="375" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="gJT-nC-2At"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B12-tj-AiL">
+                                <rect key="frame" x="0.0" y="71" width="375" height="116"/>
+                                <color key="backgroundColor" red="1" green="0.97340834779999996" blue="0.83728646510000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="116" id="vTQ-Er-9jj"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="PaR-Wt-naX"/>
+                                </connections>
+                            </pickerView>
+                            <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ViM-4y-G6l">
+                                <rect key="frame" x="0.0" y="240" width="375" height="131"/>
+                                <color key="backgroundColor" red="1" green="0.97340834779999996" blue="0.83728646510000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="131" id="3LP-Zu-6WH"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="FFL-lp-cQ6"/>
+                                </connections>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zba-pf-gfr">
+                                <rect key="frame" x="16" y="587" width="343" height="59"/>
+                                <color key="backgroundColor" red="0.9876150247554405" green="0.79290540560284495" blue="0.48763068488742156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="59" id="d1R-lW-062"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <color key="tintColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <state key="normal" title="Dibujar"/>
+                                <connections>
+                                    <action selector="IniciarView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qKo-01-ALk"/>
+                                    <segue destination="paa-ZT-Lfx" kind="presentation" identifier="goToNextView" modalTransitionStyle="flipHorizontal" id="bxz-Of-rsf"/>
+                                </connections>
+                            </button>
+                            <pickerView tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LkL-RF-QgC">
+                                <rect key="frame" x="0.0" y="432" width="375" height="133"/>
+                                <color key="backgroundColor" red="1" green="0.97340834779999996" blue="0.83728646510000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="3vs-Uk-fBa"/>
+                                </connections>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color borde:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mk8-qF-hYR">
+                                <rect key="frame" x="0.0" y="389" width="375" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Lo9-ps-ph9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nro de lados:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcq-pF-jDg">
+                                <rect key="frame" x="0.0" y="28" width="375" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="sXP-TL-wRn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.56138534849999999" green="1" blue="0.97013314370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="gcq-pF-jDg" secondAttribute="trailing" id="0P0-5K-d3h"/>
+                            <constraint firstItem="HL6-Cx-o7O" firstAttribute="top" secondItem="B12-tj-AiL" secondAttribute="bottom" constant="16" id="18Y-i6-oH7"/>
+                            <constraint firstItem="HL6-Cx-o7O" firstAttribute="leading" secondItem="ViM-4y-G6l" secondAttribute="leading" id="1Sa-FR-ih3"/>
+                            <constraint firstItem="B12-tj-AiL" firstAttribute="leading" secondItem="HL6-Cx-o7O" secondAttribute="leading" id="4eI-8y-Gec"/>
+                            <constraint firstItem="Zba-pf-gfr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="4rM-02-oPI"/>
+                            <constraint firstItem="HL6-Cx-o7O" firstAttribute="trailing" secondItem="ViM-4y-G6l" secondAttribute="trailing" id="8Xx-BT-Wl1"/>
+                            <constraint firstItem="gcq-pF-jDg" firstAttribute="trailing" secondItem="B12-tj-AiL" secondAttribute="trailing" id="Af4-rE-1To"/>
+                            <constraint firstItem="Zba-pf-gfr" firstAttribute="top" secondItem="LkL-RF-QgC" secondAttribute="bottom" constant="22" id="BuX-jo-nSj"/>
+                            <constraint firstItem="LkL-RF-QgC" firstAttribute="centerX" secondItem="Zba-pf-gfr" secondAttribute="centerX" id="L8m-h4-Nc6"/>
+                            <constraint firstItem="mk8-qF-hYR" firstAttribute="top" secondItem="ViM-4y-G6l" secondAttribute="bottom" constant="18" id="Oas-kD-dle"/>
+                            <constraint firstItem="gcq-pF-jDg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="Pi4-oU-ffj"/>
+                            <constraint firstItem="B12-tj-AiL" firstAttribute="trailing" secondItem="HL6-Cx-o7O" secondAttribute="trailing" id="UVo-oN-jn1"/>
+                            <constraint firstItem="mk8-qF-hYR" firstAttribute="leading" secondItem="LkL-RF-QgC" secondAttribute="leading" id="bNS-XW-b14"/>
+                            <constraint firstItem="ViM-4y-G6l" firstAttribute="leading" secondItem="mk8-qF-hYR" secondAttribute="leading" id="cMp-fM-1tP"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Zba-pf-gfr" secondAttribute="bottom" constant="21" id="dNb-kA-bVX"/>
+                            <constraint firstItem="gcq-pF-jDg" firstAttribute="leading" secondItem="B12-tj-AiL" secondAttribute="leading" id="ena-ke-U61"/>
+                            <constraint firstItem="LkL-RF-QgC" firstAttribute="top" secondItem="mk8-qF-hYR" secondAttribute="bottom" constant="22" id="gEF-e7-JCR"/>
+                            <constraint firstItem="ViM-4y-G6l" firstAttribute="trailing" secondItem="mk8-qF-hYR" secondAttribute="trailing" id="gkf-X5-QRD"/>
+                            <constraint firstItem="B12-tj-AiL" firstAttribute="top" secondItem="gcq-pF-jDg" secondAttribute="bottom" constant="22" id="hng-pr-b2N"/>
+                            <constraint firstItem="ViM-4y-G6l" firstAttribute="top" secondItem="HL6-Cx-o7O" secondAttribute="bottom" constant="16" id="kbV-H3-NY5"/>
+                            <constraint firstItem="mk8-qF-hYR" firstAttribute="trailing" secondItem="LkL-RF-QgC" secondAttribute="trailing" id="qny-dE-f9u"/>
+                            <constraint firstItem="gcq-pF-jDg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xKw-wJ-TLt"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="PickerBorde" destination="LkL-RF-QgC" id="U4P-Pd-RmC"/>
+                        <outlet property="PickerLados" destination="B12-tj-AiL" id="cGy-fR-LRT"/>
+                        <outlet property="PickerRelleno" destination="ViM-4y-G6l" id="1hp-cT-NDs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-730.39999999999998" y="15.742128935532236"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="hYD-mT-pNG">
+            <objects>
+                <viewController id="paa-ZT-Lfx" customClass="SecondViewController" customModule="GraficadorProyecto2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NVN-TN-wvU"/>
+                        <viewControllerLayoutGuide type="bottom" id="wi0-1Q-fe6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="redraw" id="6al-S9-deY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="fYO-Yc-uDx" customClass="FigurasView" customModule="GraficadorProyecto2" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.91039244513497264" green="0.91866274124445912" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="verTri" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="verCua" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="escala">
+                                        <real key="value" value="0.90000000000000002"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="strokePoint">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="fYO-Yc-uDx" secondAttribute="trailing" id="HrS-aW-3nz"/>
+                            <constraint firstItem="fYO-Yc-uDx" firstAttribute="leading" secondItem="6al-S9-deY" secondAttribute="leading" id="iyV-gO-jdc"/>
+                            <constraint firstItem="fYO-Yc-uDx" firstAttribute="bottom" secondItem="wi0-1Q-fe6" secondAttribute="top" id="pNO-HH-mal"/>
+                            <constraint firstItem="fYO-Yc-uDx" firstAttribute="top" secondItem="6al-S9-deY" secondAttribute="top" id="zs7-IO-0ir"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="FigView" destination="fYO-Yc-uDx" id="G55-cX-g7h"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="goBack" modalTransitionStyle="flipHorizontal" id="X2H-o3-G7B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DZK-sS-gkQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="252" y="15.742128935532236"/>
         </scene>
     </scenes>
 </document>
